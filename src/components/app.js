@@ -1,22 +1,22 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { fetchPost } from '../actions';
+import Posts from './posts';
 
-const App = (props) =>{
-   
-    console.log(props.num)
-    return( <div>
-        <div>Post App</div>
-        <button onClick= { ()=> props.fetchPost(props.num)}>click Me</button>
-    </div>)
+class App extends React.Component {
+
+    componentDidMount() {
+        this.props.fetchPost()
+    }
+
+    render() {
+        return (<div>
+            <div>Post App</div>
+            <Posts/>
+        </div>)
+    }
 }
 
-const mapStateToProps=(state)=>{
-    console.log(state)
-   return {
-       num : state.fetchPost
-   }
-}
 
 
-export default connect(mapStateToProps,{fetchPost})(App);
+export default connect(null, { fetchPost })(App);

@@ -10,9 +10,9 @@ class App extends React.Component {
     }
 
     render() {
-        return (<div>
-            <div>Post App</div>
-            <Posts/>
+        return (<div >
+            <h1 className='ui header '>Post App</h1>
+            <Posts />
         </div>)
     }
 }
